@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Process Lister", "Process Lister.csproj", "{7B76A081-E605-4EC3-907A-4579805AF03A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessListerUnitTest", "..\ProcessListerUnitTest\ProcessListerUnitTest.csproj", "{1FDA0BDC-48B2-428B-B6F3-2C6E26EB1A22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7B76A081-E605-4EC3-907A-4579805AF03A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B76A081-E605-4EC3-907A-4579805AF03A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B76A081-E605-4EC3-907A-4579805AF03A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FDA0BDC-48B2-428B-B6F3-2C6E26EB1A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FDA0BDC-48B2-428B-B6F3-2C6E26EB1A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FDA0BDC-48B2-428B-B6F3-2C6E26EB1A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FDA0BDC-48B2-428B-B6F3-2C6E26EB1A22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
