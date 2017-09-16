@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Process_Lister
 {
-        [Serializable]
-        class SerializedProcess
+    [Serializable]
+    class SerializedProcess
         {
             private String name;
             public string Name { get => name; set => name = value; }
