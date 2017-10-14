@@ -48,10 +48,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ByteArrayComparer.cs" />
     <Compile Include="SerializedProcess Comparer.cs" />
     <Compile Include="SerializedProcessTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProgramTests.cs" />
+    <Compile Include="StringManipulationTests.cs" />
     <Compile Include="WriteFileTests.cs" />
   </ItemGroup>
   <ItemGroup>

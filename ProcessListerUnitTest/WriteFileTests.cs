@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Process_Lister;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Diagnostics;
 
 namespace ProcessListerUnitTest
 {
@@ -17,12 +19,19 @@ namespace ProcessListerUnitTest
         [TestMethod]
         public void Test_ReadAndWriteToBinaryFile()
         {
+            SHA256 shaM = new SHA256Managed();
+            StringManipulation stringManip = new StringManipulation();
             List<SerializedProcess> processes = new List<SerializedProcess>();
             SerializedProcess sprocess = new SerializedProcess();
-            sprocess.Name = "Test 1";
+            byte[] result;
+            result = shaM.ComputeHash(stringManip.ToByteArray("Test 3"));
+            Debug.WriteLine(result);
+            Debug.WriteLine(stringManip.ByteArrayToString(result));
+            sprocess.Name = stringManip.ByteArrayToString(result);
             processes.Add(sprocess);
             sprocess = new SerializedProcess();
-            sprocess.Name = "Test 2";
+            result = shaM.ComputeHash(stringManip.ToByteArray("Test 4"));
+            sprocess.Name = stringManip.ByteArrayToString(result);
             processes.Add(sprocess);
             String binaryPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\ProcessesBinary.bin";
             writeFile.WriteToBinaryFile<List<SerializedProcess>>(binaryPath, processes, false);
