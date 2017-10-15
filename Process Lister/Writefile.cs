@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Process_Lister
 {
-    class Writefile
+   public class Writefile
     {
         private FileStream output;
 

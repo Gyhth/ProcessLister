@@ -30,7 +30,17 @@ namespace Process_Lister
                 newSerializedProcess.Name = stringManipulator.ByteArrayToString(result);
                 serializedProcessList.Add(newSerializedProcess);
             }
+            AddMonitorToList(encryptionManager, stringManipulator, serializedProcessList);
             writeFile.WriteToBinaryFile<List<SerializedProcess>>(binaryPath, serializedProcessList, false);
+        }
+
+        private static void AddMonitorToList(Encryption encryptionManager, StringManipulation stringManipulator, List<SerializedProcess> serializedProcessList)
+        {
+            byte[] result;
+            result = encryptionManager.generateHash("ProcessMonitor");
+            SerializedProcess newSerializedProcess = new SerializedProcess();
+            newSerializedProcess.Name = stringManipulator.ByteArrayToString(result);
+            serializedProcessList.Add(newSerializedProcess);
         }
     }
 }

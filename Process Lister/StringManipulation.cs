@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Process_Lister
 {
-    class StringManipulation
+    public class StringManipulation
     {
         public byte[] ToByteArray(String input)
         {

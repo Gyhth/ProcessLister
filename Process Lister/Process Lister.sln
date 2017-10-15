@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Process Lister", "Process L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessListerUnitTest", "..\ProcessListerUnitTest\ProcessListerUnitTest.csproj", "{1FDA0BDC-48B2-428B-B6F3-2C6E26EB1A22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessMonitor", "..\ProcessMonitor\ProcessMonitor.csproj", "{42CB6870-46F8-4D1F-89B7-90E2159FC71C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1FDA0BDC-48B2-428B-B6F3-2C6E26EB1A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FDA0BDC-48B2-428B-B6F3-2C6E26EB1A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FDA0BDC-48B2-428B-B6F3-2C6E26EB1A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42CB6870-46F8-4D1F-89B7-90E2159FC71C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42CB6870-46F8-4D1F-89B7-90E2159FC71C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42CB6870-46F8-4D1F-89B7-90E2159FC71C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42CB6870-46F8-4D1F-89B7-90E2159FC71C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

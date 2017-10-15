@@ -2,12 +2,12 @@
 
 namespace Process_Lister
 {
-    class Encryption
+    public class Encryption
     {
         private SHA256 shaM;
 
         public Encryption() {
-            SHA256 shaM = new SHA256Managed();
+            shaM = new SHA256Managed();
         }
 
         public byte[] generateHash(string input)
