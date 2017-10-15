@@ -21,12 +21,13 @@ namespace Process_Lister
             Process[] processlist = Process.GetProcesses();
             List<SerializedProcess> serializedProcessList = new List<SerializedProcess>();
             byte[] result;
-            SHA256 shaM = new SHA256Managed();
+            Encryption encryptionManager = new Encryption();
+            StringManipulation stringManipulator = new StringManipulation();
             foreach (Process process in processlist)
             {
-                result = shaM.ComputeHash(stringManip.ToByteArray(process.ProcessName));
+                result = encryptionManager.generateHash(process.ProcessName);
                 SerializedProcess newSerializedProcess = new SerializedProcess();
-                newSerializedProcess.Name = result.ToString();
+                newSerializedProcess.Name = stringManipulator.ByteArrayToString(result);
                 serializedProcessList.Add(newSerializedProcess);
             }
             writeFile.WriteToBinaryFile<List<SerializedProcess>>(binaryPath, serializedProcessList, false);
