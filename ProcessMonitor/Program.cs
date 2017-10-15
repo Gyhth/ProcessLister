@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Process_Lister;
-using System.Diagnostics;
+﻿using Process_Lister;
+using System;
 using System.IO;
-using System.Timers;
 using System.Threading;
 
 namespace ProcessMonitor

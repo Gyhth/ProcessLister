@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
 
 namespace Process_Lister
 {
@@ -30,17 +28,29 @@ namespace Process_Lister
                 newSerializedProcess.Name = stringManipulator.ByteArrayToString(result);
                 serializedProcessList.Add(newSerializedProcess);
             }
-            AddMonitorToList(encryptionManager, stringManipulator, serializedProcessList);
+            List<String> processList = new List<String>();
+            addProcessesToList(processList);
+            AddOthersToList(encryptionManager, stringManipulator, serializedProcessList, processList);
             writeFile.WriteToBinaryFile<List<SerializedProcess>>(binaryPath, serializedProcessList, false);
         }
 
-        private static void AddMonitorToList(Encryption encryptionManager, StringManipulation stringManipulator, List<SerializedProcess> serializedProcessList)
+        private static void AddOthersToList(Encryption encryptionManager, StringManipulation stringManipulator, List<SerializedProcess> serializedProcessList, List<String> otherProcesses)
         {
             byte[] result;
-            result = encryptionManager.generateHash("ProcessMonitor");
-            SerializedProcess newSerializedProcess = new SerializedProcess();
-            newSerializedProcess.Name = stringManipulator.ByteArrayToString(result);
-            serializedProcessList.Add(newSerializedProcess);
+            foreach (String process in otherProcesses)
+            {
+                result = encryptionManager.generateHash("ProcessMonitor");
+                SerializedProcess newSerializedProcess = new SerializedProcess();
+                newSerializedProcess.Name = stringManipulator.ByteArrayToString(result);
+                serializedProcessList.Add(newSerializedProcess);
+            }
+
+        }
+
+        private static void addProcessesToList(List<String> processList)
+        {
+            processList.Add("Task Manager");
+            processList.Add("ProcessMonitor");
         }
     }
 }
